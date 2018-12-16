@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './style.css'
 import { connect } from "react-redux";
 import {
   deleteTodo,
@@ -24,7 +25,8 @@ class TileContainer extends Component {
   render() {
     return (
       <div className="col-lg-10 offset-lg-1 col-md-10 col-sm-12 col-xs-12">
-        <Tile/>
+        <Tile image={images[this.props.tileOrder[1]  + '.jpg']} />
+
 
       </div>
     );
