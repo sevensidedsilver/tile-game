@@ -11,12 +11,23 @@ function shuffle(a) {
 let shuffleMe = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
 let initialState = shuffle(shuffleMe)
 
+let matricize = (array) => {
+  let result = [
+    array.slice(0,4),
+    array.slice(4,8),
+    array.slice(8,12),
+    array.slice(12,16)
+  ]
+  return result;
+}
+
+initialState = matricize(initialState)
 
 
 const tileMover = (state = initialState
 
   , action) => {
-    
+    console.log(state)
     return state
 
 }

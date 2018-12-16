@@ -24,9 +24,8 @@ const images = importAll(require.context('../imgs', false, /\.(png|jpe?g|svg)$/)
 class TileContainer extends Component {
   render() {
     return (
-      <div className="col-lg-10 offset-lg-1 col-md-10 col-sm-12 col-xs-12">
+      <div className="tileContainer">
         <Tile image={images[this.props.tileOrder[1]  + '.jpg']} />
-
 
       </div>
     );

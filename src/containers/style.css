@@ -1,5 +1,10 @@
+.width {
+  width: 600px;
+}
+
+
 .tile {
-  width: 200px;
+  width: 150px;
 }
 
 .tile img {
