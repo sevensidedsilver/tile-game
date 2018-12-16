@@ -8,7 +8,7 @@ function shuffle(a) {
     return a;
 }
 
-let shuffleMe = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+let shuffleMe = [1,2,3,'NA',5,6,7,8,9,10,11,12,13,14,15,16]
 let initialState = shuffle(shuffleMe)
 
 let matricize = (array) => {
@@ -24,11 +24,21 @@ let matricize = (array) => {
 initialState = matricize(initialState)
 
 
-const tileMover = (state = initialState
+const tileMover = (state = initialState, action) => {
+    switch (action.type){
+      case TILE_CLICK:
+        console.log("clicked")
+        return state
 
-  , action) => {
-    console.log(state)
-    return state
+
+      default:
+        console.log(state)
+        return state
+
+    }
+
+
+
 
 }
 
