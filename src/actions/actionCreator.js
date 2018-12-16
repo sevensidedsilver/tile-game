@@ -1,7 +1,16 @@
 import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from './actionsTypes'
 
-let TodoId = 2
+import { TILE_CLICK } from './actionsTypes'
 
+
+export const tileClick = tile => ({
+  type: TILE_CLICK,
+  tile
+})
+
+
+
+let TodoId = 2
 export const addTodo = text => ({
     type: ADD_TODO,
     id: TodoId++,
