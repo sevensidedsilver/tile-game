@@ -27,7 +27,7 @@ initialState = matricize(initialState)
 const tileMover = (state = initialState, action) => {
     switch (action.type){
       case TILE_CLICK:
-        console.log("clicked")
+        console.log(action.tile)
         return state
 
 
