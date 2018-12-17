@@ -42,16 +42,22 @@ const tileMover = (state = initialState, action) => {
         console.log("index of NA:" + indexOfNA)
         console.log("index of   :" + tileClicked)
 
-        // tile clicked and NA tile are on same row AND nex to one another
+        // tile clicked and NA tile are on same row AND next to one another
         if (indexOfNA[0] == tileClicked[0] && 1 == Math.abs(indexOfNA[1] - tileClicked[1])) {
-          console.log("hit")
           let result = state.slice()
+          result[indexOfNA[0]][indexOfNA[1]] = state[tileClicked[0]][tileClicked[1]]
+          result[tileClicked[0]][tileClicked[1]] = "NA"
+          return result
 
+        // tile clicked and NA tile are on same column and next to one another
+      } else if (indexOfNA[1] == tileClicked[1] && 1 == Math.abs(indexOfNA[0] - tileClicked[0])) {
+          let result = state.slice()
+          console.log("clicked " + tileClicked)
+          console.log("NA " + indexOfNA)
 
           result[indexOfNA[0]][indexOfNA[1]] = state[tileClicked[0]][tileClicked[1]]
           result[tileClicked[0]][tileClicked[1]] = "NA"
 
-          console.log(result)
           return result
         }
 
