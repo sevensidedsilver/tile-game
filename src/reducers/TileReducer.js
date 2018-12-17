@@ -24,17 +24,57 @@ let matricize = (array) => {
 initialState = matricize(initialState)
 
 
+function getIndexOfx(arr, x) {
+  for (var i = 0; i < arr.length; i++) {
+    var index = arr[i].indexOf(x);
+    if (index > -1) {
+      return [i, index];
+    }
+  }
+}
+
 const tileMover = (state = initialState, action) => {
     switch (action.type){
       case TILE_CLICK:
-        console.log(action.tile)
-        return state
+        let indexOfNA = getIndexOfx(state, "NA")
+        let tileClicked = action.tileRow.concat(action.tileNum)
+
+        console.log("index of NA:" + indexOfNA)
+        console.log("index of   :" + tileClicked)
+
+        // tile clicked and NA tile are on same row AND nex to one another
+        if (indexOfNA[0] == tileClicked[0] && 1 == Math.abs(indexOfNA[1] - tileClicked[1])) {
+          console.log("hit")
+          let result = state.slice()
+
+
+          result[indexOfNA[0]][indexOfNA[1]] = state[tileClicked[0]][tileClicked[1]]
+          result[tileClicked[0]][tileClicked[1]] = "NA"
+
+          console.log(result)
+          return result
+        }
+
+        else {
+          return state
+        }
+
+        break;
+
+
+
+
+
+
+
+
+
 
 
       default:
         console.log(state)
         return state
-
+        break;
     }
 
 

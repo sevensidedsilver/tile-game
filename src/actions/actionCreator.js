@@ -3,9 +3,10 @@ import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from './act
 import { TILE_CLICK } from './actionsTypes'
 
 
-export const tileClick = tile => ({
+export const tileClick = (tileRow, tileNum) => ({
   type: TILE_CLICK,
-  tile
+  tileRow,
+  tileNum
 })
 
 
